@@ -1,0 +1,41 @@
+<html lang="ru">
+  <head>
+      <meta charset="utf-8">
+      <title>match-match game</title>
+      <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Match-match game</h1>
+      <section>
+        <script type="text/javascript">
+          var rows=5;
+          var cols=5;
+          //array of random images
+          for (var arr = [], k = 0; k < 15; k++) arr [k] = k;
+            arr.sort (new Function ('x', 'y', 'return Math.random () - Math.random ()'));
+            for (var rez = [], k = 0; k < 15; k++){
+               rez [k] = '<img src="images/star_wasr_' + arr [k] + '.jpg">';
+               if (!((k + 1) % 20)) rez [k] += '<br>';
+            }
+            //document.write (rez.slice (0, j));
+
+
+          for (var i = 0; i < rows; i++) {
+            for (var j = 0; j < cols; j++) {
+              document.write (rez[Math.floor(Math.random() * 15)]);
+            }
+            document.write("<br>");
+          }
+        </script>
+      </section>
+      <nav>
+        <ul>
+          <li><a href="game_page.html">restart</a></li>
+          <li><a href="#">best score</a></li>
+          <li><a href="#">continue</a></li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
